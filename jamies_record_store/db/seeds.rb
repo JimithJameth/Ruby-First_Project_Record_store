@@ -8,3 +8,4 @@ artist1 = Artist.new({
   })
 
 artist1.save()
+album1.save()
