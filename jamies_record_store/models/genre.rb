@@ -10,15 +10,15 @@ class Genre
 
   def initialize(options)
 
-  @genre_id = options["genre_id"]
+  @genre_id = options["genre_id"].to_i
   @id = options["id"].to_i
 
   end
 
   def save()
-    sql = "INSERT INTO albums(genre
-    )VALUES(
-    '#{@genre_id}'
+    sql = "INSERT INTO genres (type)
+    VALUES(
+    '#{@type}'
     )RETURNING id;"
     @id = SqlRunner.run(sql)[0]["id"].to_i
   end

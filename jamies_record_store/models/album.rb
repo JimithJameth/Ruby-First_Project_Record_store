@@ -13,7 +13,7 @@ class Album
   @title = options ["title"]
   @id = options ["id"].to_i if options ["id"]
   @artist_id = options['artist_id'].to_i
-  @genre_id = options['genre'].to_i
+  @genre_id = options['genre_id'].to_i
   end
 
   def save()

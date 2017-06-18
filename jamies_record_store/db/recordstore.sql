@@ -11,7 +11,7 @@ CREATE TABLE albums(
   id serial8 PRIMARY KEY,
   title VARCHAR(255),
   artist_id INT8 REFERENCES artists(id),
-  genre_id INT8 REFERENCES albums(id)
+  genre_id INT8 REFERENCES genres(id)
 );
 
 CREATE TABLE genres(

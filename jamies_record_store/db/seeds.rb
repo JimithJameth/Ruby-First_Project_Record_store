@@ -24,14 +24,13 @@ artist3.save()
 genre1 = Genre.new({
   "genre" => "pop"
   })
+genre1.save()
 
 album1 = Album.new({
   "title" => "Heros",
   "genre_id" => genre1.id,
   "artist_id" => artist1.id
   })
-
-genre1.save()
 album1.save()
 
 album2 = Album.new({
