@@ -9,8 +9,9 @@ class Artist
 
   def initialize(options)
 
-  @name = (options) ["name"]
-  @id = (options) ['id'].to_i if options ["id"]
+  @name = options ["name"]
+  @id = options ['id'].to_i if options ["id"]
+  
 
   end
 
@@ -39,7 +40,6 @@ class Artist
   def albums
     sql = "SELECT * FROM albums WHERE artist_id = #{@id}"
     results = SqlRunner.run(sql)
-    binding.pry
     return results.map { |album| Album.new(album) }
   end
 

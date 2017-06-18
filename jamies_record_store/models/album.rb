@@ -4,21 +4,23 @@ require_relative("../db/sql_runner")
 
 class Album
 
-  attr_accessor :title
+  attr_accessor :title 
   attr_reader :id
 
   def initialize(options)
     
-  @title = (options) ["title"]
-  @id = (options) ["id"].to_i if options ["id"]
+  @title = options ["title"]
+  @id = options ["id"].to_i if options ["id"]
+  @artist_id = options ['artist_id'].to_i
 
   end
 
   def save()
 
-    sql = "INSERT INTO albums(title
+    sql = "INSERT INTO albums(title,artist_id
     )VALUES(
-    '#{@title}'
+    '#{@title}',
+    '#{@artist_id}'
     )RETURNING id;"
     @id = SqlRunner.run(sql)[0]["id"].to_i
   end

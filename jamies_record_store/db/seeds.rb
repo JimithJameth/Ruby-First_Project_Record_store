@@ -29,5 +29,5 @@ album1.save()
 artist2.save()
 album2.save()
 artist1.albums()
-# binding.pry
+binding.pry
 nil
