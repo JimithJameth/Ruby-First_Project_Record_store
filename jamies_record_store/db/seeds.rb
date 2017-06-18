@@ -35,13 +35,15 @@ album1.save()
 
 album2 = Album.new({
   "title" => "Drums and Wires",
-  "artist_id" => artist2.id
+  "artist_id" => artist2.id,
+  "genre_id" => genre1.id
   })
 album2.save()
 
 album3 = Album.new({
   "title" => "No wow",
-  "artist_id" => artist3.id
+  "artist_id" => artist3.id,
+  "genre_id" => genre1.id
   })
 album3.save()
 
