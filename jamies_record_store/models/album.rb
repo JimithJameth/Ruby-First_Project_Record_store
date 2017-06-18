@@ -1,5 +1,6 @@
 require_relative("artist")
 require_relative("album")
+require_relative("genre")
 require_relative("../db/sql_runner")
 
 class Album
@@ -11,16 +12,17 @@ class Album
     
   @title = options ["title"]
   @id = options ["id"].to_i if options ["id"]
-  @artist_id = options ['artist_id'].to_i
-
+  @artist_id = options['artist_id'].to_i
+  @genre_id = options['genre'].to_i
   end
 
   def save()
 
-    sql = "INSERT INTO albums(title,artist_id
+    sql = "INSERT INTO albums(title,artist_id,genre_id
     )VALUES(
     '#{@title}',
-    '#{@artist_id}'
+    '#{@artist_id}',
+    '#{@genre_id}'
     )RETURNING id;"
     @id = SqlRunner.run(sql)[0]["id"].to_i
   end

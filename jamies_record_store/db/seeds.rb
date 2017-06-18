@@ -5,6 +5,7 @@ require_relative('../models/genre')
 Album.delete_all()
 Artist.delete_all()
 
+
 artist1 = Artist.new({
   "name" => "David Bowie"
   })
@@ -15,12 +16,22 @@ artist2 = Artist.new({
   })
 artist2.save()
 
-  
+artist3 = Artist.new({
+  "name" => "The Kills"
+  })
+artist3.save()
+
+genre1 = Genre.new({
+  "genre" => "pop"
+  })
+
 album1 = Album.new({
   "title" => "Heros",
+  "genre_id" => genre1.id,
   "artist_id" => artist1.id
   })
 
+genre1.save()
 album1.save()
 
 album2 = Album.new({
@@ -29,6 +40,11 @@ album2 = Album.new({
   })
 album2.save()
 
+album3 = Album.new({
+  "title" => "No wow",
+  "artist_id" => artist3.id
+  })
+album3.save()
 
 binding.pry
 nil
