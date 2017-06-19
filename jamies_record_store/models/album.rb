@@ -25,7 +25,7 @@ class Album
     '#{@title}',
     '#{@artist_id}',
     '#{@genre_id}',
-     #{@quantity}
+     #{@quantity},
      #{@price}
     )RETURNING id;"
     @id = SqlRunner.run(sql)[0]["id"].to_i
@@ -68,5 +68,9 @@ class Album
     genre_data = results[0]
     return Genre.new(genre_data)
   end
-    
 end
+    
+#   def total()
+#     return @quantity * @price
+#   end
+# end
