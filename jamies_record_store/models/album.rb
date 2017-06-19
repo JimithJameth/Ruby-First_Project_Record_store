@@ -5,7 +5,7 @@ require_relative("../db/sql_runner")
 
 class Album
 
-  attr_accessor :title 
+  attr_accessor :title ,:quantity
   attr_reader :id
 
   def initialize(options)
@@ -14,15 +14,17 @@ class Album
   @id = options ["id"].to_i if options ["id"]
   @artist_id = options['artist_id'].to_i
   @genre_id = options['genre_id'].to_i
+  @quantity = options['quantity'].to_i
   end
 
   def save()
 
-    sql = "INSERT INTO albums(title,artist_id,genre_id
+    sql = "INSERT INTO albums(title,artist_id,genre_id,quantity
     )VALUES(
     '#{@title}',
     '#{@artist_id}',
-    '#{@genre_id}'
+    '#{@genre_id}',
+     #{@quantity}
     )RETURNING id;"
     @id = SqlRunner.run(sql)[0]["id"].to_i
   end
@@ -49,9 +51,20 @@ class Album
   end
 
   def Album.delete_all
-      sql = "DELETE FROM albums"
-      SqlRunner.run(sql) 
+    sql = "DELETE FROM albums"
+    SqlRunner.run(sql) 
   end
 
+  def delete()
+    sql = "DELETE FROM albums WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+    
+  def genre
+    sql = "SELECT * FROM genres WHERE id = #{@genre_id}"
+    results = SqlRunner.run(sql)
+    genre_data = results[0]
+    return Genre.new(genre_data)
+  end
     
 end

@@ -27,6 +27,11 @@ artist4 = Artist.new({
   })
 artist4.save()
 
+artist5 = Artist.new({
+  "name" => "Genesis"
+  })
+artist5.save()
+
 genre1 = Genre.new({
   "type" => "pop"
   })
@@ -36,6 +41,16 @@ genre2 = Genre.new({
   "type" => "indie rock"
   })
 genre2.save()
+
+genre3 = Genre.new({
+  "type" => "Prog Rock"
+  })
+genre3.save()
+
+genre4 = Genre.new({
+  "type" => "Art Rock"
+  })
+genre4.save()
 
 album1 = Album.new({
   "title" => "Heros",
@@ -68,6 +83,22 @@ album4 = Album.new({
   "quantity" => 10
   })
 album4.save()
+
+album5 = Album.new({
+  "title" => "Foxtrot",
+  "artist_id" => artist5.id,
+  "genre_id" => genre3.id,
+  "quantity" => 5
+  })
+album5.save()
+
+album6 = Album.new({
+  "title" => "Scary Monsters",
+  "artist_id" => artist1.id,
+  "genre_id" => genre4.id,
+  "quantity" => 3
+  })
+album6.save()
 
 binding.pry
 nil

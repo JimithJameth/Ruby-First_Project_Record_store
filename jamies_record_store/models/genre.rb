@@ -10,7 +10,7 @@ class Genre
 
   def initialize(options)
 
-  @genre_id = options["genre_id"].to_i
+  @type = options["type"]
   @id = options["id"].to_i
 
   end
@@ -21,5 +21,17 @@ class Genre
     '#{@type}'
     )RETURNING id;"
     @id = SqlRunner.run(sql)[0]["id"].to_i
+  end
+
+  def Genre.all
+    sql = "SELECT * FROM genres"
+    genres = SqlRunner.run(sql)
+    return genres.map { |genre|Genre.new(genre) }
+  end
+
+
+  def Genre.delete_all
+    sql = "DELETE FROM genres"
+    SqlRunner.run(sql)
   end
 end

@@ -11,7 +11,6 @@ class Artist
 
   @name = options ["name"]
   @id = options ['id'].to_i if options ["id"]
-  
 
   end
 
@@ -30,6 +29,11 @@ class Artist
     SqlRunner.run(sql)
   end
 
+  def delete()
+    sql = "DELETE FROM artists where id = #{@id}"
+    SqlRunner.run(sql)
+  end
+    
   def Artist.all
     sql = "SELECT * FROM artists"
     artists = SqlRunner.run(sql)
