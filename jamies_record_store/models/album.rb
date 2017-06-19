@@ -6,7 +6,7 @@ require_relative("../db/sql_runner")
 class Album
 
   attr_accessor :title ,:quantity
-  attr_reader :id
+  attr_reader :id, :price
 
   def initialize(options)
     
@@ -29,6 +29,10 @@ class Album
      #{@price}
     )RETURNING id;"
     @id = SqlRunner.run(sql)[0]["id"].to_i
+  end
+
+  def price_as_pounds
+   return "£"+ sprintf("%.2f", @price.to_f / 100) 
   end
 
   def update
@@ -67,6 +71,16 @@ class Album
     results = SqlRunner.run(sql)
     genre_data = results[0]
     return Genre.new(genre_data)
+  end
+
+  def stock_level
+    if @quantity >= 15
+      return "high"
+    end
+    if @quantity >= 7
+      return "medium"
+    end
+    return "low"
   end
 end
     

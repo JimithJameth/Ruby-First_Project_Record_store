@@ -1,0 +1,15 @@
+<h1>Albums</h1>
+
+<table>
+  <tr>
+      <th>Albums</th>
+  </tr>
+  
+  <% for album in @albums %>
+    <tr>
+      <td><%= album.title %></td>
+    </tr>
+  <% end %>
+
+</table>
+

@@ -1,6 +1,20 @@
-/*body {
-  background-image:url('/images/vinyls.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  color:black;
- } */
+td {
+  padding: 0px 15px;
+}
+
+ body {
+  background-color: lightblue;
+  
+ }
+
+ .low {
+  color: red;
+ }
+
+ .medium{
+  color: yellow;
+ }
+
+ .high{
+  color:green;
+ }

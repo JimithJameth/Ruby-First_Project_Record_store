@@ -5,8 +5,7 @@ require_relative("../db/sql_runner")
 
 class Genre
 
-  attr_accessor :genre_id
-  attr_reader :id
+  attr_reader :id,:type
 
   def initialize(options)
 
