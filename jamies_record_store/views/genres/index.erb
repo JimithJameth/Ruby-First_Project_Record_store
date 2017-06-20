@@ -1,0 +1,11 @@
+<h1>Genres</h1>
+
+  <a href="/">home</a>
+<% for genre in @genres %> 
+  <p><%= genre.type %></p>
+
+  <form method = "post" action ="/genres/<%= genre.id %>/delete">
+  <input type="submit" value = "delete">
+    
+  </form>
+<% end %>

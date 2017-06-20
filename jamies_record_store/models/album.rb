@@ -56,6 +56,12 @@ class Album
     return Artist.new(artist_data)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM albums WHERE id = #{id}"
+    album = SqlRunner.run(sql)
+    return Artist.new(album)
+  end
+
   def Album.delete_all
     sql = "DELETE FROM albums"
     SqlRunner.run(sql) 
@@ -84,7 +90,3 @@ class Album
   end
 end
     
-#   def total()
-#     return @quantity * @price
-#   end
-# end

@@ -33,4 +33,15 @@ class Genre
     sql = "DELETE FROM genres"
     SqlRunner.run(sql)
   end
+
+  def Genre.find(id)
+    sql = "SELECT * FROM genres WHERE id = #{id}"
+    genre = SqlRunner.run(sql).first()
+    return Genre.new(genre)
+  end
+
+  def delete
+    sql ="DELETE FROM genres WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
 end

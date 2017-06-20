@@ -7,8 +7,6 @@
   <th>Quantity</th>
   <th>Stock Level</th>
 
-
-
 <%for album in @albums   %>
 <tr>
   <td><%= album.artist.name %></td>
@@ -16,9 +14,11 @@
   <td><%= album.genre.type %></td>
   <td><%= album.price_as_pounds %></td>
   <td><%= album.quantity %></td>
-  <td class=<%= album.stock_level %>><%= album.stock_level %></td>
+  <td class="<%= album.stock_level %>"><%= album.stock_level %></td>
   <td></td>
 </tr>
 <%end  %>
+
+<a href="/">home</a>
 </table>
     

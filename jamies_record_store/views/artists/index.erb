@@ -1,14 +1,14 @@
 <h1>Artists</h1>
-
-<table>
-  <tr>
-      <th>Artist</th>
-  </tr>
   
-  <% for artist in @artists %>
-    <tr>
-      <td><%= artist.name %></td>
-    </tr>
-  <% end %>
+  <a href="/">home</a>
+<% for artist in @artists %> 
+  <p><%= artist.name %></p>
 
-</table>
+  <form method = "post" action ="/artists/<%= artist.id %>/delete">
+  <input type="submit" value = "delete">
+    
+  </form>
+<% end %>
+
+
+

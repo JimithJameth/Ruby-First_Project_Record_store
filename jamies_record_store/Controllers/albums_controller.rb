@@ -6,3 +6,17 @@ get'/albums' do
   @albums = Album.all()
   erb( :"albums/index" )
 end
+
+get'/albums/new' do
+  erb( :"albums/new")
+end
+
+post'/albums' do
+  album = Album.new(params)
+  album.save()
+end
+
+post'/albums/:id/delete' do
+  album = Album.find(params["id"])
+  album.delete
+end
