@@ -8,3 +8,7 @@ post '/genres/:id/delete' do
   genre.delete()
   redirect to '/'
 end
+
+get'/genres/new' do
+  erb( :"genres/new")
+end
