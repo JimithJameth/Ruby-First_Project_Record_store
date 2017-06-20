@@ -5,12 +5,12 @@ h1{
 }
 
 
-td {
-  padding: 0px 15px;
+td,th {
+  padding: 10px 20px
 }
 
  body {
-  background-color: lightblue;
+  background-color: silver;
   
  }
 
@@ -25,3 +25,6 @@ td {
  .high{
   color:green;
  }
+
+ table { width: 600px; } /* Make table wider */  
+ td, th { border: 1px solid black; } /* Add borders to cells */

@@ -9,6 +9,12 @@ post '/genres/:id/delete' do
   redirect to '/'
 end
 
+post '/genres' do
+  genre = Genre.new(params)
+  genre.save()
+  redirect to'/genres'
+end
+
 get'/genres/new' do
   erb( :"genres/new")
 end

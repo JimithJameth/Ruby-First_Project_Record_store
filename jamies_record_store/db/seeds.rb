@@ -33,12 +33,12 @@ artist5 = Artist.new({
 artist5.save()
 
 genre1 = Genre.new({
-  "type" => "pop"
+  "type" => "Pop"
   })
 genre1.save()
 
 genre2 = Genre.new({
-  "type" => "indie rock"
+  "type" => "Indie Rock"
   })
 genre2.save()
 
