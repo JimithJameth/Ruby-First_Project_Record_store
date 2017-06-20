@@ -4,6 +4,7 @@ get '/genres' do
 end
 
 post '/genres/:id/delete' do
-  genre = Genre.find(params)["id"]
+  genre = Genre.find(params["id"])
   genre.delete()
+  redirect to '/'
 end

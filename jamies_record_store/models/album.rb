@@ -23,8 +23,8 @@ class Album
     sql = "INSERT INTO albums(title,artist_id,genre_id,quantity,price
     )VALUES(
     '#{@title}',
-    '#{@artist_id}',
-    '#{@genre_id}',
+     #{@artist_id},
+     #{@genre_id},
      #{@quantity},
      #{@price}
     )RETURNING id;"
@@ -58,8 +58,8 @@ class Album
 
   def self.find(id)
     sql = "SELECT * FROM albums WHERE id = #{id}"
-    album = SqlRunner.run(sql)
-    return Artist.new(album)
+    album = SqlRunner.run(sql)[0]
+    return Album.new(album)
   end
 
   def Album.delete_all

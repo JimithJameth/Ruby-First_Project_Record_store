@@ -16,6 +16,7 @@ end
 post'/albums' do
   album = Album.new(params)
   album.save()
+  redirect to '/inventory'
 end
 
 post'/albums/:id/delete' do
