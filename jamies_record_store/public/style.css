@@ -16,7 +16,6 @@ h1,h2,h3,h4,h5{
   background-color: silver;
   /*background-image:url(../images/spinningrecord.gif);
   background-size: cover;*/
-  
  }
 
  .low {
@@ -62,4 +61,9 @@ h1,h2,h3,h4,h5{
  /* Change the link color to #111 (black) on hover */
  li a:hover {
      background-color: #111;
+ }
+
+ input[type=text] {
+     border:solid black;
+     border-bottom: 3px solid black;
  }
