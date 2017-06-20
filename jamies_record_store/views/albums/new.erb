@@ -1,4 +1,24 @@
 <form method = "post" action = "/albums">
+  <label>Title</label>
   <input type="text" name="title">
+
+  <label>Quantity</label>
+  <input type="number" name="quantity">
+
+  <label>Price</label>
+  <input type="number" name="price">
+
+  <select name = "artist_id">
+  <%for artist in @artists  %>    
+    <option value= "<%=artist.id %>"><%=artist.name %></option>
+  <% end %>
+  </select>
+
+  <select name = "genre_id">
+    <%for genre in @genres %>
+      <option value="<%=genre.id%>"><%=genre.type %></option>
+    <% end %>
+  </select>
+
   <input type="submit">
 </form>

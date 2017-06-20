@@ -2,19 +2,13 @@
 
 <h1>Albums</h1>
 
-<table>
-  <tr>
-     <th>Albums</th>
-  </tr>
-  
-  <% for album in @albums %>
-    <tr>
-      <td><%= album.title %></td>
-    </tr>
-  <% end %>
-
-
 <a href="/">home</a>
+<% for album in @albums %> 
+  <p><%= album.title %></p>
 
-</table>
+    <form method = "post" action ="/albums/<%= album.id %>/delete">
+    <input type="submit" value = "delete">
+      
+    </form>
+  <% end %>
 

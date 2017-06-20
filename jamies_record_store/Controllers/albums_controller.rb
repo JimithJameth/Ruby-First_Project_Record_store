@@ -8,6 +8,8 @@ get'/albums' do
 end
 
 get'/albums/new' do
+  @artists = Artist.all()
+  @genres = Genre.all()
   erb( :"albums/new")
 end
 
@@ -18,5 +20,6 @@ end
 
 post'/albums/:id/delete' do
   album = Album.find(params["id"])
-  album.delete
+  album.delete()
+  redirect to '/'
 end
