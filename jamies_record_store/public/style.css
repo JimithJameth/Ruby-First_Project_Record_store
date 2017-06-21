@@ -6,7 +6,7 @@ h1,h2,h3,h4,h5{
   text-align: center;
   color:white;
   font-size: 46px;
-  font-family: "Helvetica,serif";
+  font-family: Helvetica, sans-serif;
   text-transform:uppercase;
   margin: 0;
   background-image: url(../images/vinyls.jpg);
@@ -14,8 +14,7 @@ h1,h2,h3,h4,h5{
 
  body {
   background-color: silver;
-  /*background-image:url(../images/spinningrecord.gif);
-  background-size: cover;*/
+  background-size: cover;
  }
 
  .low {
