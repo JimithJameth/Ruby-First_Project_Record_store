@@ -14,9 +14,7 @@
   font-size: 46px;
   font-family: Helvetica, sans-serif;
   text-transform:uppercase;
-  background-image: url(../images/vinyls.jpg);
-
-  
+  background-image: url(/images/vinyls.jpg);
 }
 
  body {
