@@ -17,6 +17,14 @@
   background-image: url(/images/vinyls.jpg);
 }
 
+  a{
+    color:red;outline: thick;
+  }
+
+  h1{
+    color:white;
+  }
+
  body {
   background-color: silver;
   background-size: cover;
@@ -67,3 +75,8 @@
  li a:hover {
      background-color: #111;
  }
+
+p  {
+  font-size:30px;
+  color:white;
+}

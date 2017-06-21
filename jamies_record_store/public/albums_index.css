@@ -1,0 +1,8 @@
+body{
+  background-image:url(/images/albums.jpg);
+}
+
+label{
+  color:orange;
+  font-size: 20px;
+}

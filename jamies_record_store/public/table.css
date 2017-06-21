@@ -8,6 +8,10 @@ td,th {
 
 table { width: 600px; 
  display:inline-table;
+ opacity: 0.8;
+ background-color:orange;
+ color:white;
+ position:relative;
  } /* Make table wider */ 
 
  .indextable{
