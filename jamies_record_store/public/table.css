@@ -1,10 +1,18 @@
 td,th {
-  padding: 10px 20px;
-  margin left:20px;
+  display: center;
+  text-align: center;
+  align-content: center;
+  /*padding: 10px 20px;
+  margin left:20px;*/
 } 
 
 table { width: 600px; 
-       display:inline-table;
-      } /* Make table wider */  
+ display:inline-table;
+ } /* Make table wider */ 
+
+ .indextable{
+  width: 600px;
+  margin:0 auto;
+}
 
 td, th { border: 2px solid black; } /* Add borders to cells */

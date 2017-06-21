@@ -79,6 +79,9 @@ class Album
     return Genre.new(genre_data)
   end
 
+#The bit of code i'm proud of (chuffed_to_bits)
+#returns a string and because the css has a class and given a color for 
+#high , medium, low , it brings back the stock level on my database table.
   def stock_level
     if @quantity >= 15
       return "high"
